@@ -182,9 +182,9 @@ def generate_markdown(products, date_str):
     today = datetime.now(timezone.utc)
     date_today = today.strftime('%Y-%m-%d')
 
-    # markdown_content = f"# PH今日热榜 | {date_today}\n\n"
-    # for rank, product in enumerate(products, 1):
-    #     markdown_content += product.to_markdown(rank)
+    markdown_content = ""
+    for rank, product in enumerate(products, 1):
+        markdown_content += product.to_markdown(rank)
 
     # 确保 data 目录存在
     os.makedirs('data', exist_ok=True)
